@@ -1,12 +1,14 @@
-# <%= title %> Format
+# OJO HTML Report Format
 
-## Installing
+## How to install / use
+
+When you sit down to start a new report, you can copy the template and all needed files using the following terminal command:
 
 ```bash
 quarto use template openjusticeok/ojo-report-template
 ```
 
-This will install the extension and create an example qmd file that you can use as a starting place for your article.
+This will install the extension and create an example qmd file that you can use as a starting place for your report / article / whatever.
 
 ## Using
 
