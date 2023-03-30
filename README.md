@@ -27,3 +27,15 @@ The template includes the following configuration options in the yaml header:
 * `number-sections` automatically numbers the section headers / TOC, `smooth-scroll` makes the scrolling behavior nicer, and `knitr: opts_chunk: fig.align: center` just sets the default behavior for figures / images in the body.
 
 For a full list of available configuration options, see https://quarto.org/docs/reference/formats/html.html
+
+## Examples
+
+Here is an example of a customized version of the template: 
+
+![image](https://user-images.githubusercontent.com/56839927/228943717-cd888a12-b0f0-4929-9b3e-0dca44834157.png)
+
+Here's how I made it:
+
+1) I navigated to the directory I wanted the report in (in this case it was `Github/diversion-hub/inst/reports/metrics-report/`) in the terminal.
+2) I ran `quarto use template openjusticeok/ojo-report-template`, which cloned the template repo and generated a `.qmd` file, plus all the necessary extensions / styling (most of which will be in `/_extensions/`). If you just open and run the resulting `.qmd` file, you should see the generic template version of the OJO report. 
+3) I customized the template by editing the `yaml` at the top of the `.qmd` file (for exmaple, I set `title-block-banner` to match DHub's green color, and `logo` to the DHub logo instead of the OJO one). I also wanted to change a few more specific things, so I edited the SCSS variables at the top of `/_extensions/openjusticeok/ojo-report-template/custom.scss` so I could change the title / subtitle text colors individually. Once you've cloned the template with `quarto use template openjusticeok/ojo-report-template`, you can go nuts and change anything you want!
