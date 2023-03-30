@@ -1,6 +1,7 @@
 /*-- scss:defaults --*/
 $link-color: #F6BE00 !default;
-
+$title-color: #F6BE00 !default;
+$subtitle-color: #ffffff !default;
 
 /*-- scss:rules --*/
 .quarto-title.column-body {
@@ -16,5 +17,9 @@ $link-color: #F6BE00 !default;
 }
 
 #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-title.column-body > div > h1 {
-  color: #F6BE00;
+  color: $title-color;
+}
+
+#title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-title.column-body > div > p {
+  color: $subtitle-color;
 }
