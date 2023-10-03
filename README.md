@@ -39,3 +39,17 @@ Here's how I made it:
 1) I navigated to the directory I wanted the report in (in this case it was `Github/diversion-hub/inst/reports/metrics-report/`) in the terminal.
 2) I ran `quarto use template openjusticeok/ojo-report-template`, which cloned the template repo and generated a `.qmd` file, plus all the necessary extensions / styling (most of which will be in `/_extensions/`). If you just open and run the resulting `.qmd` file, you should see the generic template version of the OJO report. 
 3) I customized the template by editing the `yaml` at the top of the `.qmd` file (for exmaple, I set `title-block-banner` to match DHub's green color, and `logo` to the DHub logo instead of the OJO one). I also wanted to change a few more specific things, so I edited the SCSS variables at the top of `/_extensions/openjusticeok/ojo-report-template/custom.scss` so I could change the title / subtitle text colors individually. Once you've cloned the template with `quarto use template openjusticeok/ojo-report-template`, you can go nuts and change anything you want!
+
+# Printing to PDF
+
+This template is built to generate a HTML report, but it is also designed to look good as a PDF. The steps to render your HTML report as a PDF are:
+
+1) First, make sure that `toc: false` is set in your document's YAML header. If you don't, the floating TOC will throw off the spacing of the final document.
+2) Next, render your document normally in the HTML format. This will create `your_report.html`.
+3) Finally, make sure that you have the `{pagedown}` package installed, and run the following function:
+
+   `pagedown::chrome_print(input = "your_report.html", output = "your_report.pdf")`
+
+> Note that the `input` is the `.html` document, and not the original `.qmd` file.
+
+4) This will generate a paralell `.pdf` version of your report wherever you specify in the `output`. Done!
