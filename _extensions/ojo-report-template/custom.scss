@@ -23,3 +23,28 @@ $subtitle-color: #ffffff !default;
 #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-title.column-body > div > p {
   color: $subtitle-color;
 }
+
+/* This removes the top margin only on the first page, for the title banner */
+@page :first {
+  margin-top: 0;
+}
+
+/* This adds a little top padding to the title banner, just an aesthetic improvement */
+.quarto-title-banner{
+  padding-top: 0.5in;
+  padding-bottom: 0.5in;
+}
+
+/* This sets the default page margins, which again, are different on the first page */
+@page {
+  margin-top: 0.5in;
+  margin-bottom: 0.5in;
+  margin-left: 0in;
+  margin-right: 0in;
+}
+
+/* Replaces the left and right margins with equal padding */
+.quarto-title-banner, .quarto-title-meta, .abstract, .content{
+  padding-left: 0.5in;
+  padding-right: 0.5in;
+}

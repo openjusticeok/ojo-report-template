@@ -10,6 +10,7 @@ number-sections: true
 smooth-scroll: true
 title-block-banner: "black"
 title-block-banner-color: "white"
+toc: false # This should be disabled if you are rendering to a PDF with {pagedown}
 knitr:
   opts_chunk:
     fig.align: center

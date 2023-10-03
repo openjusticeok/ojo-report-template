@@ -8,6 +8,5 @@ contributes:
       template-partials:
         - title-block.html
       embed-resources: true
-      toc: true
       theme: [yeti, custom.scss]
 
