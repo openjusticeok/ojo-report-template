@@ -1,19 +1,25 @@
 ---
 title: Report Title
-subtitle: A generic OJO template for HTML reports
+subtitle: A generic OJO template for HTML and PDF reports
 format:
   ojo-report-template-html: default
-author: Analyst Name
-date: last-modified
-logo: "www/ojo-logo-white.png"
+# Formatting options -----------------------------------------------------------
+logo: "www/ojo-logo-white.png" # Other option is "www/ojo-logo.png", which has no white background
 number-sections: true
 smooth-scroll: true
 title-block-banner: "black"
 title-block-banner-color: "white"
-toc: false # This should be disabled if you are rendering to a PDF with {pagedown}
-knitr:
-  opts_chunk:
-    fig.align: center
+fontcolor: "black"
+linkcolor: "black"
+toc: false # This should be 'false' if your end goal is a PDF 
+knitr: 
+  opts_chunk: 
+    fig.align: center # These are the default chunk options
+    echo: false
+    warning: false
+# Document info ----------------------------------------------------------------
+author: Analyst Name
+date: last-modified
 description: |
   This is where you can write a brief description of the publication if needed.
   If you don't need it for your current project, you can just delete this parameter.
@@ -24,9 +30,21 @@ abstract: |
   delete the parameter if you don't need it.
 ---
 
+```{r}
+
+# To render to PDF after you've rendered your .html document:
+# pagedown::chrome_print("./report.html", "./report.pdf", format = "pdf")
+
+# We'll build this into the YAML header so you don't have to take this extra step
+# once the {pagedown} people get around to adding quarto support.
+
+```
+
 ## Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra turpis feugiat sem euismod interdum. Sed ultrices eget turpis ut malesuada. Donec vel nibh a arcu placerat sodales. Donec sagittis metus vitae placerat finibus. Curabitur a augue finibus nisl scelerisque molestie ac nec arcu. Vivamus lorem ligula, efficitur at scelerisque ac, bibendum a enim. Quisque non leo nibh. Sed non ante vel lacus ultricies fringilla. Maecenas ut massa tempor, ultrices lectus mollis, lobortis nisi. Donec dapibus magna nec suscipit vulputate. Sed placerat purus felis, eget egestas arcu ultricies eget. Curabitur leo ante, ultrices non elit vitae, sodales facilisis lacus. Nulla quis velit sollicitudin dolor laoreet porta. Mauris mauris orci, lacinia ac commodo non, vehicula nec metus. Integer imperdiet laoreet diam eu blandit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra turpis feugiat sem euismod interdum. Sed ultrices eget turpis ut malesuada. Donec vel nibh a arcu placerat sodales. Donec sagittis metus vitae placerat finibus. Curabitur a augue finibus nisl scelerisque molestie ac nec arcu. Vivamus lorem ligula, efficitur at scelerisque ac, bibendum a enim. Quisque non leo nibh. Sed non ante vel lacus ultricies fringilla. Maecenas ut massa tempor, ultrices lectus mollis, lobortis nisi. Donec dapibus magna nec suscipit vulputate. Sed placerat purus felis, eget egestas arcu ultricies eget. 
+
+This is a [link to some url](https://github.com/openjusticeok/ojo-report-template).
 
 ## Data
 
@@ -36,11 +54,33 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra tur
 
 ### Data overview
 
+Here's a sample plot:
+
 ```{r}
 
 plot(rnorm(n = 1000, mean = 0, sd = 3))
 
 ```
+
+Here's a table, too:
+
+```{r}
+
+# {gt} is our preferred table manager:
+mtcars |>
+  head(5) |>
+  gt::gt()
+
+# Knitr has some more basic options:
+# mtcars |>
+#   head(8) |>
+#   knitr::kable()
+
+```
+
+<!-- This is how you insert a page break. -->
+<!-- It will only appear in the PDF version; the html version will ignore it. -->
+{{< pagebreak >}}
 
 ## Methods
 
@@ -57,7 +97,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra tur
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum pharetra turpis feugiat sem euismod interdum. Sed ultrices eget turpis ut malesuada. Donec vel nibh a arcu placerat sodales. Donec sagittis metus vitae placerat finibus. Curabitur a augue finibus nisl scelerisque molestie ac nec arcu. Vivamus lorem ligula, efficitur at scelerisque ac, bibendum a enim. Quisque non leo nibh. Sed non ante vel lacus ultricies fringilla.
 
 ```{r}
-for(i in 1:10){
+for(i in 1:5){
   print(i)
 }
 
