@@ -11,8 +11,10 @@ $subtitle-color: #ffffff !default;
   display: flex;
 }
 
+/* Logo spacing */
 #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-title.column-body > img {
-  margin-right: 20px;
+  margin-left: auto;
+  margin-right: 0px;
 }
 
 .description {
@@ -36,6 +38,12 @@ $subtitle-color: #ffffff !default;
 .quarto-title-banner{
   padding-top: 0.5in;
   padding-bottom: 0.5in;
+}
+
+/* Adds the vertical line next to the title / subtitle and spaces it out a bit */
+.quarto-title .title-subtitle-div {
+  padding-left: 10px;
+  border-left: 5px solid $title-color;
 }
 
 /* This sets the default page margins, which again, are different on the first page */

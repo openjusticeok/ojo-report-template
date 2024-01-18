@@ -4,13 +4,13 @@
     <div>
       
     <div class="quarto-title column-body">
-      $if(logo)$<img src="$logo$", width = 100, height = 100>$endif$
-      <div>
+      <div class="quarto-title title-subtitle-div">
         $if(title)$<h1 class="title">$title$</h1>$endif$
         $if(subtitle)$
         <p class="subtitle lead">$subtitle$</p>
         $endif$
         </div>
+        $if(logo)$<img src="$logo$", width = $logo-width$, height = $logo-height$>$endif$
       </div>
       
       $if(description)$

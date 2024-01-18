@@ -4,19 +4,23 @@ subtitle: A generic OJO template for HTML and PDF reports
 format:
   ojo-report-template-html: default
 # Formatting options -----------------------------------------------------------
-logo: "www/ojo-logo-white.png" # Other option is "www/ojo-logo.png", which has no white background
+logo: "www/ojo-logo-white-wide.png" # Other options are in the /www/ directory
+logo-width: 275 # Logo width; 100x100 works best for "ojo-logo.png", 250 works best for "wide" variants
+logo-height: 100 # Logo height; I usually keep this at 100
 number-sections: true
 smooth-scroll: true
-title-block-banner: "black"
-title-block-banner-color: "white"
-fontcolor: "black"
-linkcolor: "black"
+title-block-banner: "black" # The background color for the header banner
+title-block-banner-color: "white" # The text color for the header banner
+fontcolor: "black" # Default text color for the body
+linkcolor: "black" # Default link color for the body
 toc: false # This should be 'false' if your end goal is a PDF 
 knitr: 
   opts_chunk: 
     fig.align: center # These are the default chunk options
     echo: false
     warning: false
+# Remember that there are other formatting options in /_extensions/ojo-report-template/custom.scss
+# You can also edit the header structure in /_extensions/ojo-report-template/title-block.html
 # Document info ----------------------------------------------------------------
 author: Analyst Name
 date: last-modified
