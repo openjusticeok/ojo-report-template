@@ -1,11 +1,15 @@
+/* Additional formatting options: */
 /*-- scss:defaults --*/
-// $link-color: #F6BE00 !default;
-// $title-color: #F6BE00 !default;
-// $subtitle-color: #ffffff !default;
 
-$title-color: #F6BE00 !default;
+$title-color: #fdbc60 !default; 
+/* 
+#fdbc60 = OKPI yellow
+#F6BE00 = OJO yellow
+*/
+
 $subtitle-color: #ffffff !default;
 
+/* Don't edit this part unless you know what you're doing! */
 /*-- scss:rules --*/
 .quarto-title.column-body {
   display: flex;
@@ -13,8 +17,14 @@ $subtitle-color: #ffffff !default;
 
 /* Logo spacing */
 #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-title.column-body > img {
-  margin-left: auto;
-  margin-right: 0px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: auto;
+  margin-bottom: auto;
+  /*
+  margin-right: auto;
+  margin-left: 0px;
+  */
 }
 
 .description {

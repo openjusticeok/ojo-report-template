@@ -1,15 +1,15 @@
 ---
-title: Report Title
+title: Open Justice Oklahoma Report Template
 subtitle: A generic OJO template for HTML and PDF reports
 format:
   ojo-report-template-html: default
 # Formatting options -----------------------------------------------------------
-logo: "www/ojo-logo-white-wide.png" # Other options are in the /www/ directory
-logo-width: 275 # Logo width; 100x100 works best for "ojo-logo.png", 250 works best for "wide" variants
-logo-height: 100 # Logo height; I usually keep this at 100
+logo: "www/okpi-square-bw-text.png" # Other options are in the /www/ directory
 number-sections: true
 smooth-scroll: true
 title-block-banner: "black" # The background color for the header banner
+# Common values:
+# - "#2f507f" is "OK Policy Blue"
 title-block-banner-color: "white" # The text color for the header banner
 fontcolor: "black" # Default text color for the body
 linkcolor: "black" # Default link color for the body
