@@ -15,20 +15,37 @@ $subtitle-color: #ffffff !default;
   display: flex;
 }
 
+/* --- Logo / Header related stuff --- */
 /* Logo spacing */
 #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-title.column-body > img {
   margin-left: 25px;
   margin-right: 25px;
   margin-top: auto;
   margin-bottom: auto;
-  /*
-  margin-right: auto;
-  margin-left: 0px;
-  */
+}
+
+/* Shifts title below image and centers them when on mobile */
+@media screen and (max-width: 600px) {
+  .quarto-title.column-body {
+  display: block !important;
+  }
+  div.quarto-title img {
+    display: block;
+    margin: auto !important; /* This will center the image */
+    padding: 10px 0; /* This adds vertical padding. Adjust the value as needed */
+  }
+  .quarto-title-banner {
+    padding-bottom: 2em;
+  }
 }
 
 .description {
   padding-top: 10px;
+}
+
+/* Fix author wrapping, which is failing for some reason */
+.quarto-title-meta {
+  grid-template-columns: repeat(2, 1fr) !important;
 }
 
 #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-title.column-body > div > h1 {
@@ -37,11 +54,6 @@ $subtitle-color: #ffffff !default;
 
 #title-block-header > div.quarto-title-banner.page-columns.page-full > div > div.quarto-title.column-body > div > p {
   color: $subtitle-color;
-}
-
-/* This removes the top margin only on the first page, for the title banner */
-@page :first {
-  margin-top: 0;
 }
 
 /* This adds a little top padding to the title banner, just an aesthetic improvement */
@@ -54,6 +66,12 @@ $subtitle-color: #ffffff !default;
 .quarto-title .title-subtitle-div {
   padding-left: 10px;
   border-left: 5px solid $title-color;
+}
+
+/* --- Margins and pagination --- */
+/* This removes the top margin only on the first page, for the title banner */
+@page :first {
+  margin-top: 0;
 }
 
 /* This sets the default page margins, which again, are different on the first page */

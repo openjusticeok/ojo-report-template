@@ -4,12 +4,10 @@ subtitle: A generic OJO template for HTML and PDF reports
 format:
   ojo-report-template-html: default
 # Formatting options -----------------------------------------------------------
-logo: "www/okpi-square-bw-text.png" # Other options are in the /www/ directory
+logo: "www/okpi-square.png" # Other options are in the /www/ directory
 number-sections: true
 smooth-scroll: true
-title-block-banner: "black" # The background color for the header banner
-# Common values:
-# - "#2f507f" is "OK Policy Blue"
+title-block-banner: "#2f507f" # The background color for the header banner
 title-block-banner-color: "white" # The text color for the header banner
 fontcolor: "black" # Default text color for the body
 linkcolor: "black" # Default link color for the body
