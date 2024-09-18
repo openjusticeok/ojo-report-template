@@ -1,6 +1,6 @@
 ---
-title: Open Justice Oklahoma Report Template
-subtitle: A generic OJO template for HTML and PDF reports
+title: Oklahoma Policy Institute Report Template
+subtitle: A generic OKPI template for HTML and PDF reports
 format:
   ojo-report-template-html: default
 # Formatting options -----------------------------------------------------------
